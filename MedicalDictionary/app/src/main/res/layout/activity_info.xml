@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="#217A5B"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/txtUserID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:text="환영합니다!" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/infoCheck"
+            android:clickable="true"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_margin="15dp"
+            android:backgroundTint="#154D3A"
+            android:padding="8dp"
+            android:text="회원정보 수정"/>
+
+        <Button
+            android:id="@+id/infoDelete"
+            android:clickable="true"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:padding="8dp"
+            android:backgroundTint="#154D3A"
+            android:textStyle="bold"
+            android:text="회원탈퇴"/>
+
+        <Button
+            android:id="@+id/infoLogout"
+            android:clickable="true"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:backgroundTint="#154D3A"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:text="로그아웃"/>
+    </LinearLayout>
+
+</LinearLayout>

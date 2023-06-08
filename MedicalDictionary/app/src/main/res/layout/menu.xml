@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="#217A5B"
+        android:text="" />
+    <Button
+        android:id="@+id/ch_indexsearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#154D3A"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_margin="15dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="인덱스 검색"/>
+    <Button
+        android:id="@+id/ch_textsearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#154D3A"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_margin="15dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="텍스트 검색"/>
+    <Button
+        android:id="@+id/ch_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#154D3A"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_margin="15dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="단어장"/>
+    <Button
+        android:id="@+id/ch_mypage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#154D3A"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_margin="15dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="마이페이지"/>
+</LinearLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MedicalDictionary</string>
+    <string name="initKorBtn">ㄱ~ㅎ</string>
+    <string name="initEngBtn">A~Z</string>
 </resources>

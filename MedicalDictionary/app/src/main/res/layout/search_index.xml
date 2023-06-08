@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".IndexSearch">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center_horizontal"
+        android:baselineAligned="false">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:textSize="35dp"
+            android:textColor="#154D3A"
+            android:textStyle="bold"
+            android:text="인덱스 검색"/>
+        <Button
+            android:id="@+id/eng_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#154D3A"
+            android:layout_marginRight="5dp"
+            android:text="@string/initEngBtn"/>
+        <Button
+            android:id="@+id/kor_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#154D3A"
+            android:text="@string/initKorBtn"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/rec_background"
+        android:layout_marginBottom="7dp"/>
+</LinearLayout>
