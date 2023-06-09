@@ -57,7 +57,7 @@ public class TextSearch extends AppCompatActivity {
         textSearch = findViewById(R.id.text_search_ed);
 
         //아이디값받기
-        sharedPreferences = getSharedPreferences("memberPreferences",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("memberPreference",MODE_PRIVATE);
         view_id = sharedPreferences.getString("user_id","fail");
 
         resultBtn.setOnClickListener(new View.OnClickListener() {

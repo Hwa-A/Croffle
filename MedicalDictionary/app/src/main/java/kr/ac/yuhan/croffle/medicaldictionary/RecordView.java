@@ -28,7 +28,7 @@ public class RecordView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_record);
-        sharedPreferences = getSharedPreferences("memberPreference",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("memberPreference", MODE_PRIVATE);
         view_id = sharedPreferences.getString("user_id","fail");
 
         recordView();

@@ -82,6 +82,9 @@
         <activity
             android:name=".RecordView"
             android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.TTS_SERVICE" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

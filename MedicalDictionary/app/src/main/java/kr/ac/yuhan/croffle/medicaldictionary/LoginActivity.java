@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editID, editPW;
     private Button signUp, login;
     private SharedPreferences sharedPreferences;
+    boolean dbFlag = true;         // db 테이블 및 데이터 생성 여부
 
     // editText가 아닌 외부 영역 터치하는 경우, 키보드 숨김
     @Override
@@ -72,6 +74,34 @@ public class LoginActivity extends AppCompatActivity {
                 login();
             }
         });
+
+        // 앱 실행 시, DB 테이블 생성 및 데이터 입력
+        if(dbFlag){
+            createDB();
+        }
+    }
+
+    public void createDB(){
+        dbFlag = false;
+        // 앱 실행 시, DB 테이블 생성 및 데이터 입력
+        Response.Listener<String> dbResponseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {  }
+        };
+
+        Response.ErrorListener dbErrorListener = new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                dbFlag = true;
+                Toast.makeText(getApplicationContext(), "테이블 생성 및 데이터 입력 중 오류 발생", Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        DBTableRequest dbTableRequest = new DBTableRequest(dbResponseListener, dbErrorListener);
+        dbTableRequest.setShouldCache(false);
+
+        RequestQueue dbQueue = Volley.newRequestQueue(getApplicationContext());
+        dbQueue.add(dbTableRequest);
     }
 
     public void saveUserInfo(String userID, String userName, String userPW) {
@@ -112,10 +142,6 @@ public class LoginActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     String errorMessage = "서버 응답 처리 중 오류가 발생했습니다.";
                     Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-                    intent.putExtra("error_message", errorMessage);
-                    startActivity(intent);
-                    finish();
                 }
             }
         };
@@ -125,10 +151,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 String errorMessage = "로그인 처리시 에러발생!";
                 Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-                intent.putExtra("error_message", errorMessage);
-                startActivity(intent);
-                finish();
             }
         };
 
