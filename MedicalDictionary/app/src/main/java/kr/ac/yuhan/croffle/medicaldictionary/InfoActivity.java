@@ -29,7 +29,7 @@ public class InfoActivity extends AppCompatActivity {
     private TextView txtUserID;
     private Button infoCheck, infoDelete, infoLogout;
     private SharedPreferences sharedPreferences;
-    private String userID; // 로그인한 사용자의 아이디 저장 변수
+    String userID; // 로그인한 사용자의 아이디 저장 변수
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +43,7 @@ public class InfoActivity extends AppCompatActivity {
 
         // SharedPreferences 인스턴스 가져오기
         sharedPreferences = getSharedPreferences("memberPreference", MODE_PRIVATE);
-
-        // 전달된 사용자 ID 값 받아오기
-        Intent intent = getIntent();
-        userID = intent.getStringExtra("user_id");
+        userID = sharedPreferences.getString("user_id","fail");
 
         if (userID != null) {
             txtUserID.setText(userID + "님의 정보");
@@ -144,8 +141,6 @@ public class InfoActivity extends AppCompatActivity {
         // SharedPreferences에서 회원 정보 가져오기
         String savedUserID = sharedPreferences.getString("user_id", "");
         String savedUserName = sharedPreferences.getString("user_name", "");
-
-        userID = savedUserID;
 
         if (savedUserID.equals(userID)) {
             // 현재 로그인한 사용자의 정보와 SharedPreferences에 저장된 정보가 일치하는 경우에만 회원 정보 표시

@@ -93,7 +93,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 dbFlag = true;
-                Toast.makeText(getApplicationContext(), "테이블 생성 및 데이터 입력 중 오류 발생", Toast.LENGTH_SHORT).show();
             }
         };
 
