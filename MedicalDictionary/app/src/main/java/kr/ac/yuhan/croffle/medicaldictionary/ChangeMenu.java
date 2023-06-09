@@ -47,7 +47,6 @@ public class ChangeMenu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),IndexSearch.class);
                 startActivity(intent);
-
             }
         });
 
@@ -79,7 +78,6 @@ public class ChangeMenu extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
                 intent.putExtra("user_id", userID); // 사용자 ID를 전달
                 startActivity(intent);
-                finish();
             }
         });
     }

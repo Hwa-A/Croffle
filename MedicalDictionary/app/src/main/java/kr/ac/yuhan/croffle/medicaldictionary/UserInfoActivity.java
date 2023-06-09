@@ -111,10 +111,6 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.btnCancel:
-                // 돌아갈 때 사용자 ID를 전달하면서 InfoActivity 호출
-                Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-                intent.putExtra("user_id", userID);
-                startActivity(intent);
                 finish();
                 break;
         }

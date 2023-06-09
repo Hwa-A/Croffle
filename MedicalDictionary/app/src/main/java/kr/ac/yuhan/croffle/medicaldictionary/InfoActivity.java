@@ -72,6 +72,7 @@ public class InfoActivity extends AppCompatActivity {
         infoLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
                 // 로그인 정보 삭제 및 로그인 화면으로 이동
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.clear();
