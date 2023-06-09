@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class IndexSearchRequest extends StringRequest {
-    private final static String indexURL = "http://10.0.2.2:8012/MedicalDictionary_php/IndexSearch.php";
+    private final static String indexURL = "http://10.0.2.2/MedicalDictionary_php/IndexSearch.php";
     private Map<String, String> indexMap;
 
     public IndexSearchRequest(String id, String termIndex, Response.Listener<String> listener, Response.ErrorListener errorListener) {

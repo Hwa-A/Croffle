@@ -12,36 +12,111 @@
         android:layout_height="wrap_content"
         android:textColor="#154D3A"
         android:text="회원 정보 조회"
-        android:textSize="20sp"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
-
-    <EditText
-        android:id="@+id/editName"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:background="@drawable/outline_edit"
-        android:layout_margin="15dp"
-        android:textColor="#154D3A"/>
-
-    <EditText
-        android:id="@+id/editID"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="#154D3A"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="이름"/>
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:background="@drawable/outline_edit"
+            android:layout_margin="15dp"
+            android:textColor="#154D3A"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_margin="15dp"
-        android:background="@drawable/outline_edit"
-        android:textColor="@color/black"/>
-
-    <EditText
-        android:id="@+id/editPW"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="#154D3A"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="아이디"/>
+        <EditText
+            android:id="@+id/editID"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/outline_edit"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_margin="15dp"
-        android:background="@drawable/outline_edit"
-        android:textColor="@color/black"/>
-
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="#154D3A"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="비밀번호"/>
+        <EditText
+            android:id="@+id/editPW"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/outline_edit"
+            android:textColor="@color/black"
+            android:inputType="textPassword"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textColor="#154D3A"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="비밀번호 확인"/>
+        <EditText
+            android:id="@+id/testPW"
+            android:layout_width="130dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/outline_edit"
+            android:textColor="@color/black"
+            android:inputType="textPassword"/>
+        <Button
+            android:id="@+id/btnPWTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:text="중복확인" />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

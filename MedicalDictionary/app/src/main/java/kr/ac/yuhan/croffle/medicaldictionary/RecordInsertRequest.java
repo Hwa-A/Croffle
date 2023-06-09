@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RecordInsertRequest extends StringRequest {
-    private final static String recordInsertURL = "http://10.0.2.2:8012/MedicalDictionary_php/RecordInsert.php";
+    private final static String recordInsertURL = "http://10.0.2.2/MedicalDictionary_php/RecordInsert.php";
     private Map<String, String> recordInsertMap;
 
     public RecordInsertRequest(String id, String termEng, String termKor, String termExplain,  Response.Listener<String> listener, Response.ErrorListener errorListener) {

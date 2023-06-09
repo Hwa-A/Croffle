@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TextSearchRequest extends StringRequest {
-    private final static String textURL = "http://10.0.2.2:8012/MedicalDictionary_php/TextSearch.php";
+    private final static String textURL = "http://10.0.2.2/MedicalDictionary_php/TextSearch.php";
     private Map<String, String> textMap;
 
     public TextSearchRequest(String id, String term, Response.Listener<String> listener, Response.ErrorListener errorListener) {

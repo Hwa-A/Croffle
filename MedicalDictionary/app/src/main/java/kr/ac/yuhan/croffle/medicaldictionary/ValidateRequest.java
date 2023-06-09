@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ValidateRequest extends StringRequest {
     //서버 url 설정(php파일 연동)
-    final static  private String URL="http://10.0.2.2:8012/MedicalDictionary_php/UserValidate.php";
+    final static  private String URL="http://10.0.2.2/MedicalDictionary_php/UserValidate.php";
     private Map<String, String> map;
 
     public ValidateRequest(String user_id, Response.Listener<String> listener){

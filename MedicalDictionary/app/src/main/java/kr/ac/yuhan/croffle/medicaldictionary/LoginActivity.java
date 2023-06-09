@@ -100,7 +100,6 @@ public class LoginActivity extends AppCompatActivity {
                         String userName = jsonObject.getString("user_name");
                         saveUserInfo(userID, userName, userPW);
 
-
                         //수정
                         Intent intent = new Intent(getApplicationContext(), ChangeMenu.class);
                         intent.putExtra("user_id", userID); // 사용자 ID를 전달

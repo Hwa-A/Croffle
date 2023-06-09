@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RecordDeleteRequest extends StringRequest {
-    private final static String recordDeleteURL = "http://10.0.2.2:8012/MedicalDictionary_php/RecordDelete.php";
+    private final static String recordDeleteURL = "http://10.0.2.2/MedicalDictionary_php/RecordDelete.php";
     private Map<String, String> recordDeleteMap;
 
     public RecordDeleteRequest(String id, String termEng, Response.Listener<String> listener, Response.ErrorListener errorListener) {

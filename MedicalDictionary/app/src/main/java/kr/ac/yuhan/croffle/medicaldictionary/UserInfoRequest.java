@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserInfoRequest extends StringRequest {
-    private static final String URL = "http://10.0.2.2:8012/MedicalDictionary_php/medicaldic_member_userinfo.php";
+    private static final String URL = "http://10.0.2.2/MedicalDictionary_php/medicaldic_member_userinfo.php";
     private Map<String, String> params;
 
     public UserInfoRequest(String userID, String userName, String userPW, Response.Listener<String> listener, Response.ErrorListener errorListener) {

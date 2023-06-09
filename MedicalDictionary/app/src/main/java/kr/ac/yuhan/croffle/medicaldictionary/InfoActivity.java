@@ -128,18 +128,11 @@ public class InfoActivity extends AppCompatActivity {
         };
 
         // Volley로 회원 탈퇴 요청
-        String url = "http://10.0.2.2:8080/MedicalDictionary_php/medicaldic_member_delete.php";
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, responseListener, errorListener) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                params.put("user_id", userID);
-                return params;
-            }
-        };
+        DeleteUserRequest deleteUserRequest = new DeleteUserRequest(userID, responseListener, errorListener);
+        deleteUserRequest.setShouldCache(false);
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-        queue.add(stringRequest);
+        queue.add(deleteUserRequest);
     }
 
     @Override

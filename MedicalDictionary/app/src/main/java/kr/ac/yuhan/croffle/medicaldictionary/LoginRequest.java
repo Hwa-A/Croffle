@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LoginRequest extends StringRequest {
-    private final static String URL = "http://10.0.2.2:8012/MedicalDictionary_php/medicaldic_member_login.php";
+    private final static String URL = "http://10.0.2.2/MedicalDictionary_php/medicaldic_member_login.php";
     private Map<String,String> map;
 
     public LoginRequest(String user_id, String user_pw, Response.Listener<String> listener, Response.ErrorListener errorListener) {

@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class SignUpRequest extends StringRequest {
 
-    private final static String URL = "http://10.0.2.2:8012/MedicalDictionary_php/medicaldic_member_signup.php";
+    private final static String URL = "http://10.0.2.2/MedicalDictionary_php/medicaldic_member_signup.php";
     private Map<String, String> map;
 
     public SignUpRequest(String user_id, String user_pw, String user_name, Response.Listener<String> listener, Response.ErrorListener errorListener) {

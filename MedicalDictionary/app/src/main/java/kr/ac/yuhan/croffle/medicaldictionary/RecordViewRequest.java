@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RecordViewRequest extends StringRequest {
-    private final static String recordURL = "http://10.0.2.2:8012/MedicalDictionary_php/RecordSelect.php";
+    private final static String recordURL = "http://10.0.2.2/MedicalDictionary_php/RecordSelect.php";
     private Map<String, String> recordMap;
 
     public RecordViewRequest(String id, Response.Listener<String> listener, Response.ErrorListener errorListener) {

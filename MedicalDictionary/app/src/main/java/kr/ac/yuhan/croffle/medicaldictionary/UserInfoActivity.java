@@ -22,9 +22,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText editID, editName, editPW;
-    private Button btnUpdate, btnCancel;
+    private EditText editID, editName, editPW, checkPW;
+    private Button btnUpdate, btnCancel, btnCheck;
     private SharedPreferences sharedPreferences;
     private String userID;
 
@@ -54,8 +58,10 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         editID = findViewById(R.id.editID);
         editName = findViewById(R.id.editName);
         editPW = findViewById(R.id.editPW);
+        checkPW = findViewById(R.id.testPW);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnCancel = findViewById(R.id.btnCancel);
+        btnCheck = findViewById(R.id.btnPWTest);
 
         // SharedPreferences 인스턴스 가져오기
         sharedPreferences = getSharedPreferences("memberPreference", MODE_PRIVATE);
@@ -64,12 +70,15 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         userID = sharedPreferences.getString("user_id", "");
         String userName = sharedPreferences.getString("user_name", "");
         String userPW = sharedPreferences.getString("user_pw", "");
-
+        String userPWTest = sharedPreferences.getString("user_pw", "");
         editID.setText(userID);
         editName.setText(userName);
         editPW.setText(userPW);
+        checkPW.setText(userPWTest);
         editID.setEnabled(false);
+        editName.setEnabled(false);
 
+        btnCheck.setOnClickListener(this);
         btnUpdate.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
     }
@@ -77,6 +86,15 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btnPWTest:
+                if(isPWCheck(editPW, checkPW)){
+                    Toast.makeText(UserInfoActivity.this, "비밀번호가 일치합니다.", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(UserInfoActivity.this, "비밀번호가 다릅니다.", Toast.LENGTH_LONG).show();
+                }
+                break;
+
             case R.id.btnUpdate:
                 if (isEditTextEmpty(editID)) {
                     Toast.makeText(UserInfoActivity.this, "아이디에 공백이 있습니다.", Toast.LENGTH_LONG).show();
@@ -84,7 +102,10 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                     Toast.makeText(UserInfoActivity.this, "비밀번호에 공백이 있습니다.", Toast.LENGTH_LONG).show();
                 } else if (isEditTextEmpty(editName)) {
                     Toast.makeText(UserInfoActivity.this, "이름에 공백이 있습니다.", Toast.LENGTH_LONG).show();
-                } else {
+                } else if(!(isPWCheck(editPW, checkPW))){
+                    Toast.makeText(UserInfoActivity.this, "비밀번호 중복 확인을 해주세요.", Toast.LENGTH_LONG).show();
+                }
+                else {
                     updateUserInfo();
                 }
                 break;
@@ -97,6 +118,14 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 finish();
                 break;
         }
+    }
+
+    private boolean isPWCheck(EditText pw1, EditText pw2){
+        boolean pFlag = false;
+        if((pw1.getText().toString()).equals(pw2.getText().toString())){
+            pFlag = true;
+        }
+        return pFlag;
     }
 
     private boolean isEditTextEmpty(EditText editText) {
@@ -115,7 +144,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                     JSONObject jsonObject = jsonArray.getJSONObject(0);
                     String success = jsonObject.getString("success");
                     if (success.equals("1")) {
-                        Toast.makeText(getApplicationContext(), "회원 정보가 업데이트되었습니다. 다시 로그인해주세요.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "회원 정보가 업데이트되었습니다.\n다시 로그인해주세요.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
                         finish();
