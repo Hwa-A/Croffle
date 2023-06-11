@@ -7,9 +7,11 @@ mysqli_set_charset($con,"utf8");
 $arr = array();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_POST['user_id'];
+    // 회원이 단어장에 등록한 용어들 삭제
     $query = "DELETE FROM record_dictionary WHERE user_id = '$user_id'";
     mysqli_query($con, $query);
 
+    // user 테이블에서 회원 정보 삭제
     $query = "DELETE FROM user WHERE user_id = '$user_id'";
 
     if (mysqli_query($con, $query)) {
