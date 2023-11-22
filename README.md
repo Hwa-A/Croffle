@@ -19,10 +19,9 @@ Android Studio + 보건 의료 용어 사전
 
 
 ### ⚙ 개발 환경
-- Android Studio
-- Mysql
-- xampp
-- apache http server
+- Android Studio(java)
+- XAMPP(Apache, MySQL)
+- VSCode(php)
 
 
 ## 📌 주요 기능
